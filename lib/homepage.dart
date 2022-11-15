@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController valor = TextEditingController();
 
   var resultado = 'oi';
+  String teste = '';
 
 api(String testeapi) async {
     var url = 'https://pokeapi.co/api/v2/pokemon/$testeapi';
@@ -22,8 +23,8 @@ api(String testeapi) async {
     var json = jsonDecode(response.body);
     var data = Data.fromJson(json);
     setState(() {
-      resultado = "${data.namee}";
-      print('lucas');
+      resultado = "${data.name}";
+      teste = "${data.sprites}";
     });
   }
 
@@ -40,7 +41,8 @@ api(String testeapi) async {
           Text('$resultado',
             style: TextStyle(fontSize: 40),)),
           //Image.network(''),
-          ElevatedButton(onPressed: (){api(valor.text);}, child: Text('OK'))
+          ElevatedButton(onPressed: (){api(valor.text);}, child: Text('OK')),
+          Image.network(teste)
         ],
       ),
     );
@@ -53,16 +55,17 @@ class valor {
 }
 
 class Data{
-  final String namee;
-  final String sprint;
+  final String name;
+  dynamic sprites;
 
 
-  Data({required this.namee, required this.sprint});
+  Data({required this.name, required this.sprites});
 
   factory Data.fromJson (Map json){
     return Data(
-      namee: json['name'],
-    sprint: json['sprint']);
+      name: json['name'],
+      sprites: json["sprites"]["front_default"]);
+
   }
 
 }
