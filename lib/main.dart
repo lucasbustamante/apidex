@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import 'homepage.dart';
 
@@ -23,16 +20,4 @@ class MyApp extends StatelessWidget {
       ,
     );
   }
-}
-
-class Data{
-  final String name;
-
-  Data({required this.name});
-
-  factory Data.fromJson (Map json){
-    return Data(
-    name: json['name'],);
-  }
-
 }
