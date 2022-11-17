@@ -19,7 +19,7 @@ class _LoadingState extends State<Loading> {
             padding: const EdgeInsets.all(90),
             child: Lottie.asset('assets/loading.json'),
           )),
-          Text('Carregando', style: TextStyle(color: Colors.grey, fontSize: 20),)
+          const Text('Carregando', style: TextStyle(color: Colors.grey, fontSize: 20),)
         ],
       ),
     );

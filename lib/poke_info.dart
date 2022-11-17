@@ -2,33 +2,124 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:testepoke/homepage.dart';
 import 'package:testepoke/requerimets.dart';
+
+import 'capitalize.dart';
+
 
 class PokeInfo extends StatefulWidget {
 
-  const PokeInfo({Key? key}) : super(key: key);
   @override
   State<PokeInfo> createState() => _PokeInfoState();
 }
+
 class _PokeInfoState extends State<PokeInfo> {
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.red,
-      title: Text('N°      Name',style: TextStyle(
-        color: Colors.white, fontSize: 20
-      ),),),
-      body: Column(
-        children: [
-          Text(resultado),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100),
-            child: Image.network('https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png'),
-          )
-        ],
-      ),
+      backgroundColor: Colors.amber.shade200,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+        child: SingleChildScrollView(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('#$id', style: TextStyle(fontWeight: FontWeight.w500,
+                  fontSize: 20),),
+              const SizedBox(height: 7),
+              Text('$name', style: TextStyle(fontWeight: FontWeight.w500,
+              fontSize: 30),),
+              const SizedBox(height: 50),
+              Row(crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  RotatedBox(
+                    quarterTurns: 3,
+                    child: Row(
+                      children: [
+                        Text(
+                          'Type: ',
+                          style: TextStyle(fontSize: 20 ,
+                          fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          type1,
+                          style: TextStyle(fontSize: 20 ,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 50),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text('Height: ',style: TextStyle(fontSize: 15,
+                              fontWeight: FontWeight.w600),),
+                          Text('$height m',style: TextStyle(fontSize: 15,
+                              fontWeight: FontWeight.w400),),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text('Weigth: ',style: TextStyle(fontSize: 15,
+                              fontWeight: FontWeight.w600),),
+                          Text('$weight kg',style: TextStyle(fontSize: 15,
+                              fontWeight: FontWeight.w400),),
+                        ],
+                      ),
+                    ],
+                  ),
+                    ],
+                  ),
+
+              Center(
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.network('https://assets.pokemon.com/assets/cms2/img/pokedex/'
+                        'full/025.png'),
+                  SizedBox(height: 60),
+                  Divider(
+                    height: 3,
+                      thickness: 3,
+                  )
+                  ],
+                ),
+              ),
+
+            ],
+          ),
+        ),
+      )
     );
   }
 }
+
+String name = '2';
+int id = 0;
+String height = '';
+String weight = '';
+String type1 = '';
+String type2 = '';
+
+api(String testeapi) async {
+  var url = 'https://pokeapi.co/api/v2/pokemon/$testeapi';
+  var response = await http.get(Uri.parse(url));
+  var json = jsonDecode(response.body);
+  var data = Data.fromJson(json);
+
+    name = capitalize("${data.name}");
+    id = data.id;
+  height = data.height.toString();
+  weight = data.weight.toString();
+  type1 = data.type1!;
+  print('lucas');
+
+
+
+}
+
+
+
