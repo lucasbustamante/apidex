@@ -2,11 +2,17 @@
 
 Aplicativo criado com o intuito de compreender melhor o consumo de API usando a biblioteca HTTP.
 
-TODO:
+# Design
+
+Design foi inspirado no [**Projeto**](https://dribbble.com/shots/6175056-Pok-dex) do Designer 
+[**Mauro E. Wernly**](https://dribbble.com/mauro-wernly)
+
+
+TO-DO:
 
 - [x] Conexão com API
 - [x] Desing
-- [ ] Info e Desing dos Pokémon
+- [ ] Info e Design dos Pokémon
 - [ ] Disponibilizar APK online
 - [ ] Publicar para acesso online
 ***
