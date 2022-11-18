@@ -48,9 +48,8 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed: () {
                 setState(() {
-                  api(valor.text);
                   Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => PokeInfo()
+                      builder: (context) => PokeInfo(nomePokemon: valor.text,)
                   ));
                 });
               }, child: const Text('Pesquisar',

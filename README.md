@@ -1,16 +1,16 @@
-# testepoke
+# APIDEX
 
-A new Flutter project.
+Aplicativo criado com o intuito de compreender melhor o consumo de API usando a biblioteca HTTP.
 
-## Getting Started
+TODO:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [x] Conexão com API
+- [x] Desing
+- [ ] Info e Desing dos Pokémon
+- [ ] Disponibilizar APK online
+- [ ] Publicar para acesso online
+***
+Capacitivo e Adaptativo para:
+- [ ] Smartphone
+- [ ] Tablet
+- [ ] Desktop
