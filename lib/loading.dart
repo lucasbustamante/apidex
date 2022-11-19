@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:testepoke/colors.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: testecolor,
       body: Column(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Padding(
@@ -25,3 +26,4 @@ class _LoadingState extends State<Loading> {
     );
   }
 }
+

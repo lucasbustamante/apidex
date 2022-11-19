@@ -40,7 +40,6 @@ class _PokeInfoState extends State<PokeInfo> {
       weight = data.weight.toString();
       sprite = data.sprites;
       type1 = data.type1!;
-      print('lucas');
 
     });
 
@@ -133,8 +132,5 @@ class _PokeInfoState extends State<PokeInfo> {
     );
   }
 }
-
-
-
 
 
