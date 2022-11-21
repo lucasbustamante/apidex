@@ -13,7 +13,6 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: testecolor,
       body: Column(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Padding(
