@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
 import 'package:testepoke/colors.dart';
 import 'package:testepoke/requerimets.dart';
-
 import 'capitalize.dart';
 
 
@@ -27,6 +26,7 @@ class _PokeInfoState extends State<PokeInfo> {
   String sprite = '';
   String type1 = '';
   String type2 = '';
+  Color backGroundcolor = Colors.white;
 
   api(String testeapi) async {
     var url = 'https://pokeapi.co/api/v2/pokemon/$testeapi';
@@ -40,65 +40,7 @@ class _PokeInfoState extends State<PokeInfo> {
       weight = data.weight.toString();
       sprite = data.sprites;
       type1 = data.type1!;
-
-      switch (type1) {
-        case 'normal':
-          testecolor = Colors.brown[400]!;
-          break;
-        case 'fire':
-          testecolor = Colors.red;
-          break;
-        case 'water':
-          testecolor = Colors.blue;
-          break;
-        case 'grass':
-          testecolor = Colors.green;
-          break;
-        case 'electric':
-          testecolor = Colors.amber.shade300;
-          break;
-        case 'ice':
-          testecolor = Colors.cyanAccent[400]!;
-          break;
-        case 'fighting':
-          testecolor = Colors.orange;
-          break;
-        case 'poison':
-          testecolor = Colors.purple;
-          break;
-        case 'ground':
-          testecolor = Colors.orange[300]!;
-          break;
-        case 'flying':
-          testecolor = Colors.indigo[200]!;
-          break;
-        case 'psychic':
-          testecolor = Colors.pink;
-          break;
-        case 'bug':
-          testecolor = Colors.lightGreen[500]!;
-          break;
-        case 'rock':
-          testecolor = Colors.grey;
-          break;
-        case 'ghost':
-          testecolor = Colors.indigo[400]!;
-          break;
-        case 'dark':
-          testecolor = Colors.brown;
-          break;
-        case 'dragon':
-          testecolor = Colors.indigo[800]!;
-          break;
-        case 'steel':
-          testecolor = Colors.blueGrey;
-          break;
-        case 'fairy':
-          testecolor = Colors.pinkAccent[100]!;
-          break;
-        default:
-          testecolor = Colors.grey;
-      }
+      backGroundcolor = color(type1);
     });
 
 
@@ -112,7 +54,7 @@ class _PokeInfoState extends State<PokeInfo> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: testecolor,
+      backgroundColor: backGroundcolor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
         child: SingleChildScrollView(
