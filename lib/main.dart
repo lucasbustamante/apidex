@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:testepoke/poke_info.dart';
 
 import 'homepage.dart';
 

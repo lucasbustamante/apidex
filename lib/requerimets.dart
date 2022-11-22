@@ -1,3 +1,5 @@
+//TODO criar tratamento de type2 quando for null
+
 class Data{
   final String name;
   dynamic sprites;
@@ -6,11 +8,10 @@ class Data{
   final int weight;
   final String sprite;
   final String? type1;
-
-
+  //final String? type2;
 
   Data({required this.name, required this.sprites, required this.id,
-  required this.height, required this.weight, this.type1,
+  required this.height, required this.weight, this.type1, //this.type2,
     required this.sprite
 
  });
@@ -24,6 +25,7 @@ class Data{
     weight:  json['weight'],
     sprite: json['sprites']['other']['official-artwork']['front_default'],
     type1: json['types'][0]['type']['name'],
+      //type2: json['types'][1]['type']['name'],
 
     );
 

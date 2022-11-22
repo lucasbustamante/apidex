@@ -15,7 +15,7 @@ Color color (String type) {
     case 'ice':
       return Colors.cyanAccent[400]!;
     case 'fighting':
-      return Colors.orange;
+      return Colors.orange[300]!;
     case 'poison':
       return Colors.purple;
     case 'ground':

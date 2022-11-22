@@ -1,5 +1,3 @@
-//TODO criar tratamendo de peso e altura dos pokémon
-
 number_treatment(String value) {
   var result = '';
   if(value.length == 1){
