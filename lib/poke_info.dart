@@ -25,7 +25,7 @@ class _PokeInfoState extends State<PokeInfo> {
   String weight = '';
   String sprite = '';
   String type1 = '';
-  //String type2 = '';
+  String type2 = '';
   Color backGroundcolor = Colors.white;
 
   api(String pokemon) async {
@@ -40,10 +40,11 @@ class _PokeInfoState extends State<PokeInfo> {
       weight = data.weight.toString();
       sprite = data.sprites;
       type1 = data.type1!;
-      //type2 = data.type2!;
+      type2 = data.type2!;
       backGroundcolor = color(type1);
       height = number_treatment(height);
       weight = number_treatment(weight);
+      print(type2);
     });
 
 
@@ -120,7 +121,7 @@ class _PokeInfoState extends State<PokeInfo> {
                       Lottie.asset('assets/loading_red.json'),
                     if(sprite != '')
                       Image.network(sprite),
-                  SizedBox(height: 60),
+                  SizedBox(height: 30),
                   Divider(
                     height: 3,
                       thickness: 3,

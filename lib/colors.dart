@@ -7,7 +7,7 @@ Color color (String type) {
     case 'fire':
       return Colors.red;
     case 'water':
-      return Colors.blue;
+      return Colors.blue[300]!;
     case 'grass':
       return Colors.green;
     case 'electric':

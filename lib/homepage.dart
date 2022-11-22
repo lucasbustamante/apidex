@@ -39,20 +39,37 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13)
-                  )
-              ),
-              onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => PokeInfo(
-                        nomePokemon: valueName.text)
-                  ));
-              }, child: const Text('Pesquisar',
-              style: TextStyle(color: Colors.white, fontSize: 17),),
+            Column(
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(13)
+                      )
+                  ),
+                  onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => PokeInfo(
+                            nomePokemon: valueName.text)
+                      ));
+                  }, child: const Text('Pesquisar',
+                  style: TextStyle(color: Colors.white, fontSize: 17),),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(13)
+                      )
+                  ),
+                  onPressed: () {
+                    valueName.clear();
+                  }, child: const Text('Limpar',
+                  style: TextStyle(color: Colors.white, fontSize: 17),),
+                ),
+              ],
             )
           ],
         ),
