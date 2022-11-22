@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
 import 'package:testepoke/colors.dart';
+import 'package:testepoke/number_treatment.dart';
 import 'package:testepoke/requerimets.dart';
 import 'capitalize.dart';
 
@@ -41,7 +42,8 @@ class _PokeInfoState extends State<PokeInfo> {
       sprite = data.sprites;
       type1 = data.type1!;
       backGroundcolor = color(type1);
-      print('lucas $name');
+      height = number_treatment(height);
+      weight = number_treatment(weight);
     });
 
 
