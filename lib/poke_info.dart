@@ -41,6 +41,7 @@ class _PokeInfoState extends State<PokeInfo> {
       sprite = data.sprites;
       type1 = data.type1!;
       backGroundcolor = color(type1);
+      print('lucas $name');
     });
 
 
