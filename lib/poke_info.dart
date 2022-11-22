@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
@@ -29,8 +28,8 @@ class _PokeInfoState extends State<PokeInfo> {
   String type2 = '';
   Color backGroundcolor = Colors.white;
 
-  api(String testeapi) async {
-    var url = 'https://pokeapi.co/api/v2/pokemon/$testeapi';
+  api(String pokemon) async {
+    var url = 'https://pokeapi.co/api/v2/pokemon/$pokemon';
     var response = await http.get(Uri.parse(url));
     var json = jsonDecode(response.body);
     var data = Data.fromJson(json);
@@ -51,7 +50,7 @@ class _PokeInfoState extends State<PokeInfo> {
   @override
   void initState(){
     super.initState();
-    api(widget.nomePokemon);
+    api(widget.nomePokemon.toLowerCase());
 
   }
 

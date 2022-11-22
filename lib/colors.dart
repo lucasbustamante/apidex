@@ -11,7 +11,7 @@ Color color (String type) {
     case 'grass':
       return Colors.green;
     case 'electric':
-      return Colors.amber.shade300;
+      return Colors.amber[200]!;
     case 'ice':
       return Colors.cyanAccent[400]!;
     case 'fighting':
@@ -23,7 +23,7 @@ Color color (String type) {
     case 'flying':
       return Colors.indigo[200]!;
     case 'psychic':
-      return Colors.pink.shade400;
+      return Colors.pink[400]!;
     case 'bug':
       return Colors.lightGreen[500]!;
     case 'rock':
@@ -31,7 +31,7 @@ Color color (String type) {
     case 'ghost':
       return Colors.indigo[400]!;
     case 'dark':
-      return Colors.grey.shade800;
+      return Colors.grey[800]!;
     case 'dragon':
       return Colors.indigo[800]!;
     case 'steel':

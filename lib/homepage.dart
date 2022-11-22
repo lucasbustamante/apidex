@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  TextEditingController valor = TextEditingController();
+  TextEditingController valueName = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 60),
               child: TextField(
-                controller: valor,
+                controller: valueName,
                 decoration: const InputDecoration(
                     labelStyle: TextStyle(color: Colors.red),
                     hintText: 'Nome do Pokemon',
@@ -47,11 +47,10 @@ class _HomePageState extends State<HomePage> {
                   )
               ),
               onPressed: () {
-                setState(() {
                   Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => PokeInfo(nomePokemon: valor.text,)
+                      builder: (context) => PokeInfo(
+                        nomePokemon: valueName.text)
                   ));
-                });
               }, child: const Text('Pesquisar',
               style: TextStyle(color: Colors.white, fontSize: 17),),
             )
