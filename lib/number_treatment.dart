@@ -10,7 +10,9 @@ number_treatment(String value) {
       result = result + value[i];
 
 
+
     }
+
   }
   return result;
 }

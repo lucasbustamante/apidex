@@ -26,7 +26,7 @@ Telas do aplicativo
 
 - [x] Conexão com API
 - [x] Desing
-- [ ] Info e Design dos Pokémon
+- [x] Info e Design dos Pokémon
 - [ ] Disponibilizar APK online
 - [ ] Publicar para acesso online
 ***
