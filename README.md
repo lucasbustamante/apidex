@@ -19,6 +19,7 @@ Design foi inspirado no [**Projeto**](https://dribbble.com/shots/6175056-Pok-dex
 Telas do aplicativo
 
 <p float="left">
+  <img src="/screenshot/Screenshot0.png" width="250" />
   <img src="/screenshot/Screenshot1.png" width="250" />
 
 ## TO-DO:
