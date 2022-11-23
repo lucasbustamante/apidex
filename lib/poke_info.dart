@@ -40,11 +40,10 @@ class _PokeInfoState extends State<PokeInfo> {
       weight = data.weight.toString();
       sprite = data.sprites;
       type1 = data.type1!;
-      type2 = data.type2!;
+      //type2 = data.type2!;
       backGroundcolor = color(type1);
       height = number_treatment(height);
       weight = number_treatment(weight);
-      print(type2);
     });
 
 
