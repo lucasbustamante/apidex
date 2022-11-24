@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testepoke/poke_info.dart';
+import 'package:testepoke/poke_image.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => PokeInfo(
+                          builder: (context) => PokeImage(
                             nomePokemon: valueName.text)
                       ));
                   }, child: const Text('Pesquisar',

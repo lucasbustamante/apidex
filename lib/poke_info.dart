@@ -1,141 +1,64 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:lottie/lottie.dart';
-import 'package:testepoke/colors.dart';
-import 'package:testepoke/number_treatment.dart';
-import 'package:testepoke/requerimets.dart';
-import 'capitalize.dart';
+import 'package:testepoke/container_stats.dart';
+import 'package:testepoke/poke_image.dart';
 
+class PokeInfo extends StatelessWidget {
+  const PokeInfo({Key? key}) : super(key: key);
 
-class PokeInfo extends StatefulWidget {
-
-  final String nomePokemon;
-
-  const PokeInfo({super.key, required this.nomePokemon});
   @override
-  State<PokeInfo> createState() => _PokeInfoState();
-}
-
-class _PokeInfoState extends State<PokeInfo> {
-
-  String name = '';
-  int id = 00;
-  String height = '';
-  String weight = '';
-  String sprite = '';
-  String type1 = '';
-  String type2 = '';
-  Color backGroundcolor = Colors.white;
-
-  api(String pokemon) async {
-    var url = 'https://pokeapi.co/api/v2/pokemon/$pokemon';
-    var response = await http.get(Uri.parse(url));
-    var json = jsonDecode(response.body);
-    var data = Data.fromJson(json);
-    setState(() {
-      name = capitalize("${data.name}");
-      id = data.id;
-      height = data.height.toString();
-      weight = data.weight.toString();
-      sprite = data.sprites;
-      type1 = data.type1!;
-      //type2 = data.type2!;
-      backGroundcolor = color(type1);
-      height = number_treatment(height);
-      weight = number_treatment(weight);
-    });
-
-
-  }
-  @override
-  void initState(){
-    super.initState();
-    api(widget.nomePokemon.toLowerCase());
-
-  }
-
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backGroundcolor,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
-        child: SingleChildScrollView(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('#$id', style: TextStyle(fontWeight: FontWeight.w500,
-                  fontSize: 25),),
-              const SizedBox(height: 7),
-              Text('$name', style: TextStyle(fontWeight: FontWeight.w500,
-              fontSize: 35),),
-              const SizedBox(height: 50),
-              Row(crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  RotatedBox(
-                    quarterTurns: 3,
-                    child: Row(
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 20),
+          Text('  Base stats:', style: TextStyle(
+              fontSize: 40, color: Colors.white,
+              shadows: <Shadow>[
+                Shadow(
+                    offset: Offset(0.0, 0.0),
+                    blurRadius: 40,
+                    color: Colors.grey[600]!)
+              ]
+          )),
+          SizedBox(
+              height: 25
+          ),
+          Container(height: 120,
+            child: Row(
+              children: [
+
+                VerticalDivider(
+                  thickness: 3,
+                ),
+                Column(mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        Text(
-                          'Type: ',
-                          style: TextStyle(fontSize: 25 ,
-                          fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          type1,
-                          style: TextStyle(fontSize: 25,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        Container_Stats(stat: 'HP: $hp'),
+                        Container_Stats(stat: 'ATTACK: $attack'),
                       ],
                     ),
-                  ),
-                  const SizedBox(width: 50),
-                  Column(crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text('Height: ',style: TextStyle(fontSize: 20,
-                              fontWeight: FontWeight.w600),),
-                          Text('$height m',style: TextStyle(fontSize: 20,
-                              fontWeight: FontWeight.w400),),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text('Weigth: ',style: TextStyle(fontSize: 20,
-                              fontWeight: FontWeight.w600),),
-                          Text('$weight kg',style: TextStyle(fontSize: 20,
-                              fontWeight: FontWeight.w400),),
-                        ],
-                      ),
-                    ],
-                  ),
-                    ],
-                  ),
-
-              Center(
-                child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    if(sprite == '')
-                      Lottie.asset('assets/loading_red.json'),
-                    if(sprite != '')
-                      Image.network(sprite),
-                  SizedBox(height: 30),
-                  Divider(
-                    height: 3,
-                      thickness: 3,
-                  )
+                    Row(
+                      children: [
+                        Container_Stats(stat: 'DEFENSE: $defense'),
+                        Container_Stats(stat: 'SP. ATTACK: $sp_attack'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container_Stats(stat: 'SP.DEFENSE: $sp_defense'),
+                        Container_Stats(stat: 'SPPED: $speed'),
+                      ],
+                    ),
                   ],
-                ),
-              ),
-
-            ],
-          ),
-        ),
-      )
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
-
-
-
