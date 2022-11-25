@@ -1,5 +1,35 @@
 import 'package:flutter/material.dart';
 
+String capitalize(String value) {
+  var result = value[0].toUpperCase();
+  bool cap = true;
+  for (int i = 1; i < value.length; i++) {
+    if (value[i - 1] == " " && cap == true) {
+      result = result + value[i].toUpperCase();
+    } else {
+      result = result + value[i];
+      cap = false;
+    }
+  }
+  return result;
+}
+
+number_treatment(String value) {
+  var result = '';
+  if(value.length == 1){
+    result = '0.$value';
+  }else if(value.length >=2){
+    for(int i = 0; i < value.length; i++){
+      if(value.length-1 == i){
+        result = result + '.';
+      }
+      result = result + value[i];
+
+    }
+  }
+  return result;
+}
+
 Color color (String type) {
   switch (type) {
     case 'normal':

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:testepoke/home_treatment.dart';
 
-import 'homepage.dart';
+import 'mobile.dart';
 
 void main (){
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: HomePage(),
+      home: Home_Treatment(),
       debugShowCheckedModeBanner: false
       ,
     );

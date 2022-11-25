@@ -2,11 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
-import 'package:testepoke/colors.dart';
 import 'package:testepoke/poke_info.dart';
 import 'package:testepoke/requerimets.dart';
-import 'capitalize.dart';
-import 'number_treatment.dart';
+import 'functions.dart';
 
 
 class PokeImage extends StatefulWidget {
@@ -66,7 +64,6 @@ class _PokeImageState extends State<PokeImage> {
   void initState(){
     super.initState();
     api(widget.nomePokemon.toLowerCase());
-
   }
 
   Widget build(BuildContext context) {

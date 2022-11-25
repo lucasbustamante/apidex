@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:testepoke/poke_image.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Mobile extends StatefulWidget {
+  const Mobile({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Mobile> createState() => _MobileState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MobileState extends State<Mobile> {
 
   TextEditingController valueName = TextEditingController();
 
