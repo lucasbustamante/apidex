@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
+import 'package:testepoke/api.dart';
 import 'package:testepoke/poke_info.dart';
 import 'package:testepoke/requerimets.dart';
 import 'functions.dart';
@@ -35,7 +36,7 @@ class _PokeImageState extends State<PokeImage> {
 
 
   api(String pokemon) async {
-    var url = 'https://pokeapi.co/api/v2/pokemon/$pokemon';
+    var url = apiUrl+pokemon;
     var response = await http.get(Uri.parse(url));
     var json = jsonDecode(response.body);
     var data = Data.fromJson(json);
@@ -58,8 +59,9 @@ class _PokeImageState extends State<PokeImage> {
       speed = data.speed;
     });
 
-
   }
+
+
   @override
   void initState(){
     super.initState();

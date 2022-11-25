@@ -20,7 +20,7 @@ class Data{
   required this.height, required this.weight, this.type1, //this.type2,
     required this.sprite, required this.hp, required this.attack,
     required this.defense, required this.sp_attack, required this.sp_defense,
-    required this.speed
+    required this.speed,
 
  });
 
@@ -43,5 +43,4 @@ class Data{
     );
 
   }
-
 }
