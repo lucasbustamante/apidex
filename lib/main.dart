@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testepoke/connection_error.dart';
 import 'package:testepoke/home_treatment.dart';
 
 import 'mobile.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: Home_Treatment(),
+      home: Connection_error(),
       debugShowCheckedModeBanner: false
       ,
     );

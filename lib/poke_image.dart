@@ -5,68 +5,23 @@ import 'package:lottie/lottie.dart';
 import 'package:testepoke/api.dart';
 import 'package:testepoke/poke_info.dart';
 import 'package:testepoke/requerimets.dart';
+import 'await_api.dart';
 import 'functions.dart';
 
 
 class PokeImage extends StatefulWidget {
 
-  final String nomePokemon;
-
-  const PokeImage({super.key, required this.nomePokemon});
   @override
   State<PokeImage> createState() => _PokeImageState();
 }
-String name = '';
-int id = 00;
-String height = '';
-String weight = '';
-String sprite = '';
-String type1 = '';
-String type2 = '';
-Color backGroundcolor = Colors.white;
-int hp = 0;
-int attack = 0;
-int defense = 0;
-int sp_attack = 0;
-int sp_defense = 0;
-int speed = 0;
+
 
 class _PokeImageState extends State<PokeImage> {
 
 
 
-  api(String pokemon) async {
-    var url = apiUrl+pokemon;
-    var response = await http.get(Uri.parse(url));
-    var json = jsonDecode(response.body);
-    var data = Data.fromJson(json);
-    setState(() {
-      name = capitalize("${data.name}");
-      id = data.id;
-      height = data.height.toString();
-      weight = data.weight.toString();
-      sprite = data.sprites;
-      type1 = data.type1!;
-      //type2 = data.type2!;
-      backGroundcolor = color(type1);
-      height = number_treatment(height);
-      weight = number_treatment(weight);
-      hp = data.hp;
-      attack = data.attack;
-      defense = data.defense;
-      sp_attack = data.sp_attack;
-      sp_defense = data.sp_defense;
-      speed = data.speed;
-    });
-
-  }
 
 
-  @override
-  void initState(){
-    super.initState();
-    api(widget.nomePokemon.toLowerCase());
-  }
 
   Widget build(BuildContext context) {
     return Scaffold(
