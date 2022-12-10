@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:lottie/lottie.dart';
 import 'package:testepoke/api.dart';
 import 'package:testepoke/loading.dart';
 import 'package:testepoke/poke_image.dart';
-import 'package:testepoke/poke_info.dart';
 import 'package:testepoke/requerimets.dart';
 import 'functions.dart';
+import 'not_found_page.dart';
 
 
 class Awayt_Api extends StatefulWidget {
@@ -37,7 +36,6 @@ class _Awayt_ApiState extends State<Awayt_Api> {
   api() async {
     var url = apiUrl+nomePokemon;
     var response = await http.get(Uri.parse(url));
-    print(url);
     var json = jsonDecode(response.body);
     var data = Data.fromJson(json);
     setState(() {
@@ -64,15 +62,23 @@ class _Awayt_ApiState extends State<Awayt_Api> {
     return FutureBuilder(
       builder: (context, snapshot){
         switch(snapshot.connectionState){
+          case ConnectionState.done :
+            if (type1== ''){
+              return NotFound();
+            }else{
+              return PokeImage();
+            }
           case ConnectionState.none :
             return Text('none');
           case ConnectionState.waiting :
             return Loading();
           case ConnectionState.active :
             return Text('active');
-          case ConnectionState.done :
-            return PokeImage();
+
+
+
         }
+        return PokeImage();
         },
         future: api()
     );
