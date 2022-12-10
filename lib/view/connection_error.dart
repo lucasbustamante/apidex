@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:testepoke/home_treatment.dart';
+import 'package:testepoke/controller/home_treatment.dart';
 
 class Connection_error extends StatelessWidget {
   const Connection_error({Key? key}) : super(key: key);

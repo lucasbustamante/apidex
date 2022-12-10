@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testepoke/tablet.dart';
+import 'package:testepoke/view/tablet.dart';
 
-import 'desktop.dart';
-import 'mobile.dart';
+import '../view/desktop.dart';
+import '../view/mobile.dart';
 
 
 double deviceSize(BuildContext, context) => MediaQuery.of(context).size.width;

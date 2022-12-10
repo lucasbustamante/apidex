@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
-import 'package:testepoke/api.dart';
-import 'package:testepoke/poke_info.dart';
-import 'package:testepoke/requerimets.dart';
-import 'await_api.dart';
-import 'functions.dart';
+import 'package:testepoke/view/api.dart';
+import 'package:testepoke/view/poke_info.dart';
+import 'package:testepoke/model/requerimets.dart';
+import '../controller/await_api.dart';
+import '../model/functions.dart';
 
 
 class PokeImage extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testepoke/container_stats.dart';
-import 'package:testepoke/poke_image.dart';
+import 'package:testepoke/model/container_stats.dart';
+import 'package:testepoke/view/poke_image.dart';
 
-import 'await_api.dart';
+import '../controller/await_api.dart';
 
 class PokeInfo extends StatelessWidget {
   const PokeInfo({Key? key}) : super(key: key);

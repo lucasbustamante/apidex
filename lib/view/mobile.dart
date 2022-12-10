@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testepoke/await_api.dart';
-import 'package:testepoke/poke_image.dart';
+import 'package:testepoke/controller/await_api.dart';
+import 'package:testepoke/view/poke_image.dart';
 
 class Mobile extends StatefulWidget {
   const Mobile({Key? key}) : super(key: key);
@@ -52,7 +52,7 @@ class _MobileState extends State<Mobile> {
                   onPressed: () {
                    nomePokemon = valueName.text;
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => Awayt_Api()
+                          builder: (context) => Await_Api()
                       ));
                   }, child: const Text('Pesquisar',
                   style: TextStyle(color: Colors.white, fontSize: 17),),

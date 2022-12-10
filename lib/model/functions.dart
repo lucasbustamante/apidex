@@ -33,7 +33,7 @@ number_treatment(String value) {
 Color color (String type) {
   switch (type) {
     case 'normal':
-      return Colors.brown[400]!;
+      return Color(0xffdeaebc);
     case 'fire':
       return Colors.red;
     case 'water':
