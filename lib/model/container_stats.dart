@@ -14,9 +14,7 @@ class Container_Stats extends StatelessWidget {
         decoration: BoxDecoration(
         color: Colors.white,
           borderRadius: BorderRadius.circular(8)
-
       ),
-
         child: Center(
             child: Text('   $stat   ',style: TextStyle(
 

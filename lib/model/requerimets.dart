@@ -21,7 +21,6 @@ class Data{
     required this.sprite, required this.hp, required this.attack,
     required this.defense, required this.sp_attack, required this.sp_defense,
     required this.speed,
-
  });
 
   factory Data.fromJson (Map json){

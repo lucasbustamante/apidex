@@ -9,7 +9,6 @@ import 'package:testepoke/view/poke_image.dart';
 import 'package:testepoke/model/requerimets.dart';
 import '../model/functions.dart';
 
-
 class Await_Api extends StatefulWidget {
 
   @override

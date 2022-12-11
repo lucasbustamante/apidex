@@ -1,13 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
-import 'package:testepoke/view/api.dart';
 import 'package:testepoke/view/poke_info.dart';
-import 'package:testepoke/model/requerimets.dart';
 import '../controller/await_api.dart';
-import '../model/functions.dart';
-
 
 class PokeImage extends StatefulWidget {
 
@@ -15,13 +9,7 @@ class PokeImage extends StatefulWidget {
   State<PokeImage> createState() => _PokeImageState();
 }
 
-
 class _PokeImageState extends State<PokeImage> {
-
-
-
-
-
 
   Widget build(BuildContext context) {
     return Scaffold(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class Tablet extends StatefulWidget {
   const Tablet({Key? key}) : super(key: key);
-
   @override
   State<Tablet> createState() => _TabletState();
 }

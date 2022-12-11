@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testepoke/model/container_stats.dart';
-import 'package:testepoke/view/poke_image.dart';
-
 import '../controller/await_api.dart';
 
 class PokeInfo extends StatelessWidget {
