@@ -17,6 +17,7 @@ class _PokeImageState extends State<PokeImage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 15),
