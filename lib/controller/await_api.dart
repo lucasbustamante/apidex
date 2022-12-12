@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:testepoke/view/api.dart';
@@ -34,10 +35,11 @@ class _Await_ApiState extends State<Await_Api> {
 
 
   api() async {
-    String url = apiUrl+nomePokemon;
+    String url = apiUrl+nomePokemon.toLowerCase();
     var response = await http.get(Uri.parse(url));
     var json = jsonDecode(response.body);
     var data = Data.fromJson(json);
+
       name = capitalize("${data.name}");
       id = data.id;
       height = data.height.toString();
@@ -72,7 +74,7 @@ class _Await_ApiState extends State<Await_Api> {
           case ConnectionState.waiting :
             return Loading();
           case ConnectionState.active :
-            return Text('lucas');
+            return PokeImage();
         }
 
         },

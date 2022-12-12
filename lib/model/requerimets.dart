@@ -39,6 +39,7 @@ class Data{
         sp_attack: json['stats'][3]['base_stat'],
         sp_defense: json['stats'][4]['base_stat'],
         speed: json['stats'][5]['base_stat'],
+
     );
 
   }
